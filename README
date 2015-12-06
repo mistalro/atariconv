@@ -1,0 +1,79 @@
+Atari Basic to ASCII converter
+by Dr. Michael Robb
+Version 1.0
+6th December 2015
+Contact msar@vfxresearch.com
+=============================================================================
+
+Introduction
+------------
+
+This application is intended to allow Atari Basic programs to be converted
+from tokenised binary format back into regular ASCII. Other options include
+the ability to display the variable name table as well as reconstruct one
+if it has been deleted.
+
+Documentation for Atari Basic and Atari system in general can be found at:
+
+De Re Atari - A Guide to Effective Programming
+http://www.atariarchives.org/dere/
+
+The use of tokenised BASIC allowed for programs to be stored compactly in the limited
+memory of 8-bit system (64K with 3 byte CPU instructions and 8K of display memory) as
+well as saved out to disc or tape. 
+
+
+Build instructions
+------------------
+
+In the directory where the source code is contained, simply type the command
+
+	make
+
+This will compile the source code into the executable atariconv
+
+
+Running instructions
+--------------------
+
+Enter the directory 'src' and run the command 'atariconv'. The -h command
+line option will display all the options available.
+
+
+Code layout
+-----------
+
+options.h - Command line options
+
+basic.h - Data structure to represent a BASIC program
+
+tokens.h - List of ATARI Basic tokens
+tokens.c
+
+tokdump.c - Display tokens
+
+fileio.h  - File IO routines
+fileio.c
+
+repair.h - Repair broken variable name lists
+repair.c
+
+dump.h  - Display routines
+dump.c
+
+decode.h - Commands used to detokenize a BASIC program into ASCII
+decode.c 
+
+mem.h - Basic memory management
+mem.c
+
+process.h - High level processing
+process.c
+
+atari.h   - Main header file including all of the above
+
+main.c - Command line processing
+Makefile
+
+=============================================================================
+  =========================================================================

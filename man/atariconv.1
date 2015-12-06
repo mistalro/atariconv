@@ -1,0 +1,100 @@
+.\"
+.\" MAN PAGE COMMENTS to
+.\"
+.\"     Michael Robb
+.\"     msar2020@gmail.com
+.\"
+.\"     Last Change: Wed Jan 19 20:50:40 EST 2011
+.\"
+.TH atariconv 1 "JANUARY 2011" BASCONV LOCAL
+.SH NAME
+atariconv \- A utility to convert tokenized Atari 400/800(XL)/1200/130XE BASIC 
+files (.BAS) back into ASCII or list files (.LST)
+.SH SYNOPSIS
+.B atariconv [options] [file]
+.B ...
+.SH COPYRIGHT
+.B atariconv
+is Copyright (C) 1989-2011 by the Free Software Foundation, Inc.
+.RE
+.SH DESCRIPTION
+.B atariconv
+is a command line utility program to convert tokenised Atari BASIC .BAS 
+files to human readable ASCII text, typically named .LST files. Variables 
+command line argument give control over the conversion and display of data.
+.SH OPTIONS
+\fBatariconv\fR accepts the following command line options:
+.IP "-h"
+Display help text from the command line program. This text is also displayed
+if no command line arguments are provided.
+.IP \-v 
+Enables verbosity mode. Provides progress messages from each stage of the
+program.
+.IP \-w "\| width\^"
+Set screen width used when displaying the text of the BASIC program.
+.IP \-A
+Display the tokenized BASIC program as regular ASCII text.
+.IP \-B
+Use BASIC .BAS file for input
+.IP \-D 
+Dump token buffer to standard output
+.IP \-d
+Dump partially decoded token buffer per line to standard output. 
+.IP \-e
+Dump extended token buffer information per line to standard output.
+.IP \-F 
+Fix variable table. Sometimes the variable name string table can get 
+corrupted or blanked out. This can be repaired by naming variables 
+according to their basic type; scalar float/integer, character string, 
+or array.
+.IP \-H
+Use hexdump file for input. The hexdump file is simply an ASCII hex-dump
+of a tokenized .BAS program with 32 hexadecimal bytes per line. The top and
+bottom lines consist of fives dashes.
+.IP \-L 
+Show last line. Normally, this is the command string that was used to save
+the file to disk eg. SAVE "D1:MYFILE.BAS"
+.IP \-T 
+Use termcap to display inverse characters. 
+.IP \-V 
+Dump the variable table to standard output
+.RE
+.SH COMMON USAGE
+To display the variable name table only, use: 
+.TP
+.PP
+\fBatariconv\fR -V -A
+.PP
+To display the tokens line-by-line as well as the ASCII code, use:
+.TP
+.PP
+\fBatariconv\fR -d 
+.PP
+To display the tokens alone, use:
+.TP
+.PP
+\fBatariconv\fR -d -A
+.SH FILES
+No other files required
+.SH ENVIRONMENT
+No environment variables are used at present
+.SH DIAGNOSTICS
+Specified by the 
+.B -D
+option, the 
+.B -V
+option and the
+.B -v
+option.
+.RE
+.SH BUGS
+None at present
+.SH AUTHOR
+Michael S. A. Robb (msar @ magicportal.homelinux.org)
+.RE
+.SH SEE ALSO
+.TP
+.B atari800 (1)
+.PP
+.TP
+\fBDe Re Atari\fR by Chris Crawford

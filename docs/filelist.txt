@@ -1,0 +1,37 @@
+Files and Directory list
+========================
+
+src    - Source code
+====================
+
+main.c    - Command line processing
+
+process.h - Processing of command line options
+process.c
+
+decode.h - Decode routines
+decode.c 
+
+dump.h - Debug routines
+dump.c 
+
+fileio.h - File input
+fileio.c 
+
+basic.h - Definitions for variables and program
+
+atari.h - Container for all include files
+
+man - Manual page
+=================
+
+atariconv.1 - Conversion program 
+
+docs - Other documents
+======================
+
+filelist.txt - This file
+
+tests - Test programs
+=====================
+
