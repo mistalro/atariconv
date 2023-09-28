@@ -116,7 +116,7 @@ TOKEN_ENTRY *token_find( int token );
 #define ATARI_OP_NUM_LT    0x20  /* < */
 #define ATARI_OP_NUM_GT    0x21  /* > */
 #define ATARI_OP_NUM_EQ    0x22  /* = */
-#define ATARI_OP_NUM_SPACE 0x23  /* Empty */
+#define ATARI_OP_NUM_POW   0x23  /* ^ */
 #define ATARI_OP_NUM_MULT  0x24  /* * */
 #define ATARI_OP_NUM_ADD   0x25  /* + */
 #define ATARI_OP_NUM_SUB   0x26  /* - */
