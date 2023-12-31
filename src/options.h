@@ -31,6 +31,7 @@ int m_dumplineascii;	// Dump line as ASCII
 int m_usetermcap;       // Use terminfo for text inverse
 int m_usehexfile;       // Use hex-dump files
 int m_usebasfile;       // Use tokenised basic files
+int m_rawataricompatible; // Output raw atari compatible
 
 // ----- Repair options ---------------------------------------------------
 
@@ -79,5 +80,8 @@ int m_numarray;         // Count of array variables
 
 #define ataribasic_setfixvartable( A, F ) \
         (A)->options.m_fixvartable = (F)
+
+#define ataribasic_setrawataricompat( A,F) \
+	(A)->options.m_rawataricompatible= (F)
 
 #endif	// _OPTIONS_H_

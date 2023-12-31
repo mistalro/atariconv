@@ -454,12 +454,14 @@ int ataribasic_readvarvalues( ATARIBASIC *aptr )
 int vn, bn, nvars;
 
 nvars = ( aptr->m_stmtab - aptr->m_vvtp ) / 8;
+if ( ! aptr->options.m_rawataricompatible ) {
 
-printf( "File number of variables= %d\n", nvars );
-printf( "Actual number of variables = %d\n", aptr->m_varnum-1 );
+	printf( "File number of variables= %d\n", nvars );
+	printf( "Actual number of variables = %d\n", aptr->m_varnum-1 );
 
+}
 for ( vn = 0; vn < nvars; vn++ )
-        ataribasic_readvarvalue( aptr, vn );
+	ataribasic_readvarvalue( aptr, vn );
 }
 
 // -------------------------------------------------------------------------

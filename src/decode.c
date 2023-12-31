@@ -256,7 +256,10 @@ while ( len-- )
 		}
 #endif
 
-	printf( "%c", opcode & 0x7f );
+	if ( aptr->options.m_rawataricompatible )
+		printf( "%c", opcode & 0xff );
+	else
+		printf( "%c", opcode & 0x7f );
 	}
 
 
@@ -567,7 +570,10 @@ lineoffset = ataribasic_getbyte( aptr );
 
 while ( !ataribasic_process_statement( aptr ) );
 
-printf( "\n");
+	if ( aptr->options.m_rawataricompatible )
+		printf( "%c",155);
+	else
+		printf( "\n");
 }
 
 // ==========================================================================
@@ -617,16 +623,19 @@ int lineno, pn, done;
 
 done = 0;
 
-if ( !(aptr->options.m_dumplinetokens | aptr->options.m_dumplineascii) )
+if ( ! aptr->options.m_rawataricompatible ) {
+	if ( !(aptr->options.m_dumplinetokens | aptr->options.m_dumplineascii) )
 	{
 	return( ATARI_NOERROR );
 	}	
 
 printf ("-----< Listing of file >-------------------------\n");
+}
 
 while ( ataribasic_process_line( aptr ) != 0x8000 );
 
-printf ("-------------------------------------------------\n");
+if ( ! aptr->options.m_rawataricompatible )
+	printf ("-------------------------------------------------\n");
 
 return( ATARI_NOERROR );
 }

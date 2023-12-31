@@ -101,7 +101,7 @@ TOKEN_ENTRY operator_list[] =
         { ATARI_OP_NUM_LT,      "<" },
         { ATARI_OP_NUM_GT,      ">" },
         { ATARI_OP_NUM_EQ,      "=" },
-        { ATARI_OP_NUM_SPACE, " " },
+        { ATARI_OP_NUM_POW,   "^" },
         { ATARI_OP_NUM_MULT,  "*" },
         { ATARI_OP_NUM_ADD,   "+" },
         { ATARI_OP_NUM_SUB,   "-" },
