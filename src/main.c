@@ -29,6 +29,8 @@ int g_dumpbuffer    = 0;	// Dump token buffer
 int g_dumplinetokens = 0;	// Dump token buffer per line
 int g_dumplineextended = 0;	// Dump token buffer per line (extended)
 int g_dumplineascii = 1;	// Dump token buffer as ASCII text
+int g_rawataricompatible = 0;	// Dump token buffer atari compatible
+
 
 // --------------------------------------------------------------------------
 // Help text
@@ -51,6 +53,7 @@ static char help_text[] =
 "       [-L] - Show last line (command string used to save file)\n"
 "       [-T] - Use termcap to display ATASCII inverse characters\n"
 "       [-V] - Dump the variable table (including names)\n"
+"       [-R] - Dump raw Atari compatible listing\n"
 };
 
 // --------------------------------------------------------------------------
@@ -84,6 +87,7 @@ ataribasic_setusetermcap( aptr, g_usetermcap );
 ataribasic_setusehexfile( aptr, g_usehexfile );
 ataribasic_setusebasfile( aptr, g_usebasfile );
 ataribasic_setfixvartable( aptr, g_fixvartable );
+ataribasic_setrawataricompat( aptr, g_rawataricompatible );
 
 if ( ataribasic_loadfile( aptr, pfilename ) )
 	{
@@ -172,6 +176,9 @@ for ( pn = 1; pn < argc; pn++ )
 			case 'B':
 				g_usehexfile = 0;
 				g_usebasfile = 1;
+				break;
+			case 'R':
+				g_rawataricompatible = 1;
 				break;
 
 			default:

@@ -1,4 +1,4 @@
-TARGET = atari
+TARGET = ataribasictolisting
 
 GCC = g++
 LIBS = -lcurses

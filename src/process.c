@@ -24,7 +24,7 @@
 
 void ataribasic_error( ATARIBASIC *aptr )
 {
-printf( "Error:\n");
+fprintf(stderr, "Error:\n");
 }
 
 // --------------------------------------------------------------------------
