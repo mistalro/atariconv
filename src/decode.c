@@ -306,7 +306,7 @@ while ( (opcode = ataribasic_getbyte(aptr ) ) != ATARI_EOL )
 			printf( "%s", exit_attribute_mode );
 		}
 #endif
-	printf( "%c", opcode & 0x7F );
+	printf( "%c", opcode & (aptr->options.m_rawataricompatible?0xff:0x7f) );
 	}
 
 #ifdef OPTION_TERMCAP
